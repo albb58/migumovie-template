@@ -1,29 +1,30 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <!-- <app-home></app-home> -->
+    <main>
+      <router-view></router-view>
+    </main>
+    <app-foot></app-foot>
   </div>
 </template>
+<script>
+import AppFoot from '@component/AppFoot'
+import AppHome from '@views/Home/AppHome'
+export default {
+  name: 'app',
+  components: {
+    AppFoot,
+    AppHome,
+  }  
+}
+</script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+main {
+  padding-bottom: 1.333333rem;
+ 
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+html, body, #app, main {
+   height: 100%;
 }
 </style>
